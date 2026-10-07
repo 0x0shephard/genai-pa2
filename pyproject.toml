@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pa2-alignment"
+version = "0.1.0"
+description = "From-scratch SFT and DPO with a reproducible Kaggle workflow"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+alignment = "alignment.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["alignment*"]
+
+[tool.setuptools]
+py-modules = ["submission_adapter"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

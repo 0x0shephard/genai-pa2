@@ -1,0 +1,13 @@
+# Keep Kaggle's CUDA-compatible torch installation. Do not pin/reinstall torch.
+transformers==4.49.0
+datasets==3.3.2
+accelerate==1.4.0
+huggingface_hub==0.29.3
+tokenizers==0.21.0
+sentencepiece==0.2.0
+safetensors==0.5.3
+numpy>=1.26,<3
+pyyaml==6.0.2
+tqdm>=4.66,<5
+matplotlib>=3.8,<4
+pytest>=8,<9
