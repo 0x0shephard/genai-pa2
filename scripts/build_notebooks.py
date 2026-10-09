@@ -17,7 +17,7 @@ def code(text):
 
 CONFIG = '''
 from pathlib import Path
-import json, os, subprocess, sys
+import json, os, shutil, subprocess, sys
 
 REPO_URL = "https://github.com/0x0shephard/genai-pa2.git"
 GIT_REF = "main"  # After the first run, use its printed commit SHA for all final runs.
@@ -44,7 +44,7 @@ COMMIT = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=REPO_DIR, tex
 os.environ["ALIGNMENT_GIT_REF"] = GIT_REF
 os.environ["PYTHONPATH"] = str(REPO_DIR)
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
-os.environ["HF_HOME"] = "/kaggle/working/hf-cache"
+os.environ["HF_HOME"] = "/tmp/pa2-hf-cache"  # Caches are disposable, not saved notebook artifacts.
 OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
 PREPARED_ROOT.mkdir(parents=True, exist_ok=True)
 print("Git commit:", COMMIT)
@@ -139,6 +139,14 @@ def main():
     if RUN_FULL:
         run("prepare", "--track", "sft", "--output", PREPARED_ROOT)
         run("prepare", "--track", "alpaca", "--output", PREPARED_ROOT / "eval")
+        # Keep smoke diagnostics, but release its large duplicate model/optimizer files.
+        if RUN_SMOKE:
+            for bulky in ("best", "final", "resume.pt", "trainer"):
+                path = smoke_run / bulky
+                if path.is_dir():
+                    shutil.rmtree(path)
+                elif path.exists():
+                    path.unlink()
         destination = OUTPUT_ROOT / RUN_NAME
         if not completed(destination):
             args = ["sft", "--data", PREPARED_ROOT / "sft", "--output", destination]
@@ -171,6 +179,14 @@ def main():
     '''), markdown("## 4. Full independent DPO run\n\n15k/1k pairs, beta 0.1, fixed LR 1e-6, batch 1 × accumulation 32, one epoch. Policy uses GPU 0; frozen SFT reference uses GPU 1."), code('''
     if RUN_FULL:
         run("prepare", "--track", TRACK, "--output", PREPARED_ROOT)
+        # Keep smoke diagnostics, but release its large duplicate model/optimizer files.
+        if RUN_SMOKE:
+            for bulky in ("best", "final", "resume.pt", "trainer"):
+                path = smoke_run / bulky
+                if path.is_dir():
+                    shutil.rmtree(path)
+                elif path.exists():
+                    path.unlink()
         destination = OUTPUT_ROOT / RUN_NAME
         if not completed(destination):
             args = ["dpo", "--data", PREPARED_ROOT / TRACK, "--model", SFT_BEST, "--output", destination]
@@ -196,6 +212,14 @@ def main():
         print((smoke_run / "summary.json").read_text())
     '''), markdown("## 4. Full persona run\n\nRank 16, alpha 32, attention projections, dropout 0.05, LR 5e-5, three epochs. See the report template for the rationale to verify against actual results."), code('''
     if RUN_FULL:
+        # Keep smoke diagnostics, but release its large duplicate model/optimizer files.
+        if RUN_SMOKE:
+            for bulky in ("best", "final", "resume.pt", "trainer"):
+                path = smoke_run / bulky
+                if path.is_dir():
+                    shutil.rmtree(path)
+                elif path.exists():
+                    path.unlink()
         destination = OUTPUT_ROOT / RUN_NAME
         if not completed(destination):
             args = ["persona", "--data", PREPARED_ROOT / "persona", "--output", destination]
