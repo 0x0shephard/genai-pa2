@@ -13,8 +13,12 @@ from kagglesdk.kernels.types.kernels_api_service import ApiGetKernelSessionLogsS
 from requests.exceptions import HTTPError
 
 
+class ObservationEnded(BaseException):
+    """Escape stream reads without being wrapped as a network error."""
+
+
 def timeout_handler(*_):
-    raise TimeoutError('Log observation window ended')
+    raise ObservationEnded('Log observation window ended')
 
 
 def observe(api, args):
@@ -46,7 +50,7 @@ def observe(api, args):
                     if line:
                         output.write(line.decode() + '\n')
                         output.flush()
-        except TimeoutError:
+        except ObservationEnded:
             pass
         finally:
             signal.alarm(0)
