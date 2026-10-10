@@ -1,0 +1,34 @@
+{
+  "checked_at_utc": "2026-10-10T12:19:57.973497+00:00",
+  "tests": {
+    "command": "PYTHONPATH=/tmp/pa2-verify-deps:. .venv/bin/python -m pytest -q",
+    "passed": 33,
+    "failed": 0,
+    "warnings": 2
+  },
+  "comparisons": {
+    "hh": {
+      "matching_prompt_hash": true,
+      "matching_decoding": true,
+      "count": 300
+    },
+    "ultrafeedback": {
+      "matching_prompt_hash": true,
+      "matching_decoding": true,
+      "count": 300
+    },
+    "persona": {
+      "matching_prompt_hash": true,
+      "matching_decoding": true,
+      "count": 40
+    }
+  },
+  "pdf": {
+    "pages": 7,
+    "sha256": "b0b4247041eb8d160746461167ec55fb297f213d343903a9701b9ff1616395d4",
+    "visually_verified_pages": 7
+  },
+  "judged_pairs": 640,
+  "judge_failures": 0,
+  "judge_unknown": 0
+}

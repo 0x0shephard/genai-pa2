@@ -1,0 +1,75 @@
+{
+  "kind": "persona",
+  "config": {
+    "model": "HuggingFaceTB/SmolLM2-360M-Instruct",
+    "model_revision": "a10cc1512eabd3dde888204e902eca88bddb4951",
+    "rank": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "targets": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ],
+    "batch_size": 2,
+    "accumulation": 16,
+    "effective_batch_size": 32,
+    "learning_rate": 5e-05,
+    "epochs": 3,
+    "max_length": 512,
+    "max_prompt_length": 256,
+    "beta": 0.1,
+    "scheduler": "cosine",
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.0,
+    "optimizer": "AdamW",
+    "adam_betas": [
+      0.9,
+      0.999
+    ],
+    "adam_epsilon": 1e-08,
+    "clip": 1.0,
+    "seed": 42,
+    "max_steps": null,
+    "precision": "fp32 weights and fp16 autocast",
+    "reference": "base model with adapter disabled",
+    "chat_template": "{% for message in messages %}{% if loop.first and messages[0]['role'] != 'system' %}{{ '<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n' }}{% endif %}{{'<|im_start|>' + message['role'] + '\n' + message['content'] + '<|im_end|>' + '\n'}}{% endfor %}{% if add_generation_prompt %}{{ '<|im_start|>assistant\n' }}{% endif %}",
+    "chat_template_hash": "dc126cf0155881b6f71b8e9a239956ae0ba45f68df08b016dadddf4c61120217"
+  },
+  "environment": {
+    "python": "3.13.15",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "transformers": "4.49.0",
+      "datasets": "3.3.2",
+      "trl": "0.15.2",
+      "peft": "0.14.0",
+      "accelerate": "1.4.0"
+    },
+    "git_commit": "e2b29ae51bd08b4d3383ad7e821a946d8e63f5fc",
+    "git_ref_requested": "e2b29ae51bd08b4d3383ad7e821a946d8e63f5fc"
+  },
+  "actual_examples": {
+    "train": 198,
+    "validation": 22
+  },
+  "data_manifest": {
+    "seed": 42,
+    "source": "data/persona_lora/ramsay_style_preferences.json",
+    "filtering": {
+      "source_rows": 220,
+      "valid_rows": 220,
+      "selected_rows": 220
+    },
+    "sizes": {
+      "train": 198,
+      "validation": 22
+    },
+    "hashes": {
+      "train": "27dad455e7ebae9e372bd6d49d39b6b6c3f67408d74808b3aa7dd5177cbc34a1",
+      "validation": "8c05aeec6a80110e7055a114c075d073dc355eb9cf3868830e2c5e4def5b263c"
+    }
+  },
+  "trainable_parameters": 3276800
+}

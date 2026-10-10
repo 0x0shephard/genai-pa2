@@ -10,3 +10,6 @@ build/
 dist/
 .env
 .DS_Store
+
+# Local PDF rendering/QA intermediates
+tmp/pdfs/

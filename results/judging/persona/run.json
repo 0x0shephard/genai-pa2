@@ -1,0 +1,20 @@
+{
+  "identity": {
+    "pairs_hash": "6c177483d73cfa105780f52bed10b351e58913fb543d5836651e74dd759bcd2e",
+    "judge_model": "google/gemini-3.6-flash",
+    "track": "persona",
+    "rubric": "For quality, assess usefulness, correctness, and safety. Separately assess style: witty, blunt, Ramsay-inspired chef energy without hateful abuse. Do not equate insults or verbosity with usefulness.",
+    "schema_version": 1
+  },
+  "environment": {
+    "python": "3.12.10",
+    "packages": {
+      "kaggle-benchmarks": "0.6.1"
+    },
+    "git_commit": "uncommitted",
+    "git_ref_requested": null
+  },
+  "batch_size": 5,
+  "sleep_seconds": 5.0,
+  "max_attempts_per_batch": 3
+}

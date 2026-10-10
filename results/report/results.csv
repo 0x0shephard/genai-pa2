@@ -1,0 +1,5 @@
+track,dimension,judge,total,wins,ties,losses,unknown,failures,win_rate_without_ties,tie_adjusted_win_rate,request_attempts,retry_attempts
+hh,quality,google/gemini-3.6-flash,300,128,69,103,0,0,0.5541125541125541,0.5416666666666666,60,0
+ultrafeedback,quality,google/gemini-3.6-flash,300,99,72,129,0,0,0.4342105263157895,0.45,67,7
+persona,quality,google/gemini-3.6-flash,40,8,28,4,0,0,0.6666666666666666,0.55,8,0
+persona,style,google/gemini-3.6-flash,40,0,40,0,0,0,,0.5,8,0

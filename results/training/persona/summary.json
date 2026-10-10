@@ -1,0 +1,22 @@
+{
+  "step": 18,
+  "best_checkpoint": "/kaggle/working/outputs/persona/trainer/checkpoint-10",
+  "best_step": 10,
+  "best_metric": 1.0,
+  "final_validation": {
+    "eval_loss": 0.598115861415863,
+    "eval_runtime": 1.6886,
+    "eval_samples_per_second": 13.028,
+    "eval_steps_per_second": 6.514,
+    "eval_rewards/chosen": 0.1922011524438858,
+    "eval_rewards/rejected": -0.008753273636102676,
+    "eval_rewards/accuracies": 1.0,
+    "eval_rewards/margins": 0.20095445215702057,
+    "eval_logps/chosen": -172.55809020996094,
+    "eval_logps/rejected": -126.14460754394531,
+    "eval_logits/chosen": 0.5114898085594177,
+    "eval_logits/rejected": 0.02261514589190483,
+    "epoch": 2.6464646464646466
+  },
+  "completed": true
+}

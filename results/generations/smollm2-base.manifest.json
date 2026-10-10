@@ -1,0 +1,35 @@
+{
+  "generator": "smollm2-base",
+  "model_identity": {
+    "model": "HuggingFaceTB/SmolLM2-360M-Instruct",
+    "revision": "a10cc1512eabd3dde888204e902eca88bddb4951"
+  },
+  "decoding": {
+    "do_sample": false,
+    "max_new_tokens": 256,
+    "repetition_penalty": 1.0,
+    "no_repeat_ngram_size": 0,
+    "length_penalty": 1.0,
+    "temperature": null,
+    "top_p": null,
+    "seed": 42,
+    "prompt_template": "{% for message in messages %}{% if loop.first and messages[0]['role'] != 'system' %}{{ '<|im_start|>system\nYou are a helpful AI assistant named SmolLM, trained by Hugging Face<|im_end|>\n' }}{% endif %}{{'<|im_start|>' + message['role'] + '\n' + message['content'] + '<|im_end|>' + '\n'}}{% endfor %}{% if add_generation_prompt %}{{ '<|im_start|>assistant\n' }}{% endif %}",
+    "max_prompt_tokens": 256
+  },
+  "prompt_hash": "bfd2a6c73848ac6c03132dce0b32472f1fbd73e08cbbd006fc59a121c1295d9d",
+  "count": 40,
+  "environment": {
+    "python": "3.13.15",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "transformers": "4.49.0",
+      "datasets": "3.3.2",
+      "trl": "0.15.2",
+      "peft": "0.14.0",
+      "accelerate": "1.4.0"
+    },
+    "git_commit": "ea164d203bc0fc3394d938c757ca155c24102127",
+    "git_ref_requested": "ea164d203bc0fc3394d938c757ca155c24102127"
+  },
+  "fingerprint": "8882fded780d605cf1b670019c50003d0117fa81ec0e2347ce614f87c8986cd9"
+}

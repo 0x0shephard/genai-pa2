@@ -1,0 +1,35 @@
+{
+  "generator": "qwen2.5-0.5b-base",
+  "model_identity": {
+    "model": "Qwen/Qwen2.5-0.5B",
+    "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987"
+  },
+  "decoding": {
+    "do_sample": false,
+    "max_new_tokens": 256,
+    "repetition_penalty": 1.0,
+    "no_repeat_ngram_size": 0,
+    "length_penalty": 1.0,
+    "temperature": null,
+    "top_p": null,
+    "seed": 42,
+    "prompt_template": "### Instruction:\n{instruction}\n\n### Response:\n",
+    "max_prompt_tokens": 256
+  },
+  "prompt_hash": "778ccd7abd47bf142865c3e1d1fcccf47e425f4d6850383eb3c10007d6773eb1",
+  "count": 300,
+  "environment": {
+    "python": "3.13.15",
+    "packages": {
+      "torch": "2.11.0+cu128",
+      "transformers": "4.49.0",
+      "datasets": "3.3.2",
+      "trl": "0.15.2",
+      "peft": "0.14.0",
+      "accelerate": "1.4.0"
+    },
+    "git_commit": "e2b29ae51bd08b4d3383ad7e821a946d8e63f5fc",
+    "git_ref_requested": "e2b29ae51bd08b4d3383ad7e821a946d8e63f5fc"
+  },
+  "fingerprint": "5063585eeb1dcb6db30e05caffa89498fc126fcc9e5950fc70e7dc783af0970a"
+}

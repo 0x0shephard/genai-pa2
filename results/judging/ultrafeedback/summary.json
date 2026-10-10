@@ -1,0 +1,33 @@
+{
+  "track": "ultrafeedback",
+  "judge_model": "google/gemini-3.6-flash",
+  "quality": {
+    "total": 300,
+    "judged": 300,
+    "wins": 99,
+    "losses": 129,
+    "ties": 72,
+    "unknown": 0,
+    "failures": 0,
+    "win_rate_without_ties": 0.4342105263157895,
+    "tie_adjusted_win_rate": 0.45,
+    "rates_over_total": {
+      "wins": 0.33,
+      "losses": 0.43,
+      "ties": 0.24,
+      "unknown": 0.0,
+      "failures": 0.0
+    },
+    "unknown_and_failures_excluded_from_win_rates": true,
+    "by_category": {
+      "uncategorized": {
+        "losses": 129,
+        "wins": 99,
+        "ties": 72
+      }
+    }
+  },
+  "request_attempts": 67,
+  "retry_attempts": 7,
+  "pending": 0
+}

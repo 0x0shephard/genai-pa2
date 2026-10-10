@@ -1,0 +1,44 @@
+{
+  "dpo_hh": {
+    "count": 300,
+    "mean_words": 126.8,
+    "median_words": 132.0,
+    "empty_outputs": 0
+  },
+  "qwen2.5-0.5b-base": {
+    "count": 300,
+    "mean_words": 132.3,
+    "median_words": 134.5,
+    "empty_outputs": 0
+  },
+  "persona_lora": {
+    "count": 40,
+    "mean_words": 143.0,
+    "median_words": 163.5,
+    "empty_outputs": 0
+  },
+  "dpo_ultrafeedback": {
+    "count": 300,
+    "mean_words": 151.1,
+    "median_words": 178.0,
+    "empty_outputs": 0
+  },
+  "sft_hh": {
+    "count": 300,
+    "mean_words": 144.1,
+    "median_words": 166.5,
+    "empty_outputs": 0
+  },
+  "smollm2-base": {
+    "count": 40,
+    "mean_words": 149.8,
+    "median_words": 173.0,
+    "empty_outputs": 0
+  },
+  "sft_alpaca": {
+    "count": 300,
+    "mean_words": 122.0,
+    "median_words": 127.0,
+    "empty_outputs": 0
+  }
+}

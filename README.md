@@ -2,6 +2,29 @@
 
 Complete training/evaluation code for the assignment in [PA2.pdf](PA2.pdf). Training runs on **Kaggle GPU T4 x2**; the local grading tests need only PyTorch and pytest.
 
+
+## Completed assignment results
+
+The Kaggle experiments and all 640 blinded Gemini 3.6 Flash comparisons are complete, with zero failed or unknown judgments. The final [seven-page PDF report](output/pdf/PA2_Final_Report.pdf) contains actual configurations, training curves, results, examples, and limitations.
+
+| Comparison | Wins / ties / losses | Tie-adjusted preference |
+|---|---|---|
+| HH DPO vs SFT | 128 / 69 / 103 | 54.2% |
+| UltraFeedback DPO vs SFT | 99 / 72 / 129 | 45.0% |
+| Persona adapter vs base: quality | 8 / 28 / 4 | 55.0% |
+| Persona adapter vs base: style | 0 / 40 / 0 | 50.0% (all ties) |
+
+HH shows a small aggregate preference gain; UF favors SFT; the persona run shows no measured style gain. These are descriptive model-judge results from one seed. SFT effectively trained on 26,942/878 examples after response-span filtering, and persona training stopped at 18 updates (recorded epoch 2.646); the report documents these deviations.
+
+Evidence is under [results/](results/), with exact saved Kaggle versions in [run_registry.json](results/run_registry.json). Large checkpoints remain in private Kaggle notebook outputs. The report and evidence are also saved in your [private Kaggle submission dataset](https://www.kaggle.com/datasets/jonraza15/pa2-completed-assignment).
+
+To rebuild the PDF locally:
+
+```bash
+python -m pip install -r requirements-report.txt
+python scripts/build_final_report.py
+```
+
 ## Start here
 
 1. Publish this directory to your **public GitHub repository**. You manage the remote and push yourself.
@@ -66,7 +89,7 @@ Pair files randomize response order and store identity mappings under `hidden_me
 
 Judging uses batches of five, a five-second delay before **every** attempt, up to three attempts per batch, incremental checkpoints, and failure logging. Valid decisions from partial batches are retained; missing/invalid decisions are retried. `UNKNOWN` is distinct from a failed call. Summary denominators are documented in generated results.
 
-The final notebook creates figures, actual configuration JSON, CSV results, representative examples, and a populated Markdown report draft. **Training results and final interpretations must come from your Kaggle runs.** Complete the draft, export it to PDF, and verify the manual's eight-page limit. Download the small plots, tables, configurations, generations, and judgments into a `results/` directory in your repository for submission; `outputs/` is ignored to prevent accidental checkpoint uploads. No results are fabricated in this repository.
+The judge notebook creates figures and report evidence. The completed submission PDF is linked above; scripts/build_final_report.py rebuilds it from the recorded results. Intermediate large checkpoints and control files under outputs/ are ignored.
 
 ## Offline checks
 

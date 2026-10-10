@@ -1,0 +1,4 @@
+# PDF authoring and verification; training dependencies remain in requirements.txt.
+reportlab==5.0.1
+pypdf==6.20.0
+matplotlib>=3.8,<4

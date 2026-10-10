@@ -1,0 +1,20 @@
+{
+  "identity": {
+    "pairs_hash": "ffe1ebbba868356ee6ab057bb0e4d1dee46d74c199a73687561703e671540c49",
+    "judge_model": "google/gemini-3.6-flash",
+    "track": "ultrafeedback",
+    "rubric": "Prioritize correctness, helpfulness, instruction-following, appropriate concision, formatting, and absence of hallucinations or unsafe advice.",
+    "schema_version": 1
+  },
+  "environment": {
+    "python": "3.12.10",
+    "packages": {
+      "kaggle-benchmarks": "0.6.1"
+    },
+    "git_commit": "uncommitted",
+    "git_ref_requested": null
+  },
+  "batch_size": 5,
+  "sleep_seconds": 5.0,
+  "max_attempts_per_batch": 3
+}

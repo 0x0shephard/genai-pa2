@@ -1,0 +1,57 @@
+{
+  "repository": "https://github.com/0x0shephard/genai-pa2",
+  "seed": 42,
+  "notebooks": {
+    "sft": {
+      "url": "https://www.kaggle.com/code/jonraza15/pa2-sft",
+      "slug": "jonraza15/pa2-sft",
+      "version": 2,
+      "git_commit": "d1734efbad653c3e9ae873d935b5677b1f4832b1"
+    },
+    "dpo_hh": {
+      "url": "https://www.kaggle.com/code/jonraza15/pa2-dpo-hh",
+      "slug": "jonraza15/pa2-dpo-hh",
+      "version": 1,
+      "git_commit": "d1734efbad653c3e9ae873d935b5677b1f4832b1"
+    },
+    "dpo_ultrafeedback": {
+      "url": "https://www.kaggle.com/code/jonraza15/pa2-dpo-ultrafeedback",
+      "slug": "jonraza15/pa2-dpo-ultrafeedback",
+      "version": 1,
+      "git_commit": "d1734efbad653c3e9ae873d935b5677b1f4832b1"
+    },
+    "persona": {
+      "url": "https://www.kaggle.com/code/jonraza15/pa2-persona",
+      "slug": "jonraza15/pa2-persona",
+      "version": 1,
+      "git_commit": "e2b29ae51bd08b4d3383ad7e821a946d8e63f5fc"
+    },
+    "baseline": {
+      "url": "https://www.kaggle.com/code/jonraza15/pa2-baseline",
+      "slug": "jonraza15/pa2-baseline",
+      "version": 1,
+      "git_commit": "e2b29ae51bd08b4d3383ad7e821a946d8e63f5fc"
+    },
+    "generation": {
+      "url": "https://www.kaggle.com/code/jonraza15/pa2-trained-generation",
+      "slug": "jonraza15/pa2-trained-generation",
+      "version": 1,
+      "git_commit": "ea164d203bc0fc3394d938c757ca155c24102127"
+    }
+  },
+  "judge": {
+    "url": "https://www.kaggle.com/benchmarks/tasks/jonraza15/pa2-blind-judge/2",
+    "task_version": 2,
+    "model": "google/gemini-3.6-flash",
+    "run_id": 4627756,
+    "dataset": "jonraza15/pa2-blind-evaluation-inputs",
+    "completed_judgments": 640
+  },
+  "checkpoint_paths": {
+    "sft": "outputs/sft/best",
+    "dpo_hh": "outputs/dpo_hh/best",
+    "dpo_ultrafeedback": "outputs/dpo_ultrafeedback/best",
+    "persona": "outputs/persona/best"
+  },
+  "submission_dataset": "jonraza15/pa2-completed-assignment"
+}
