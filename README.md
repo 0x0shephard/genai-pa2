@@ -5,7 +5,7 @@ Complete training/evaluation code for the assignment in [PA2.pdf](PA2.pdf). Trai
 
 ## Completed assignment results
 
-The Kaggle experiments and all 640 blinded Gemini 3.6 Flash comparisons are complete, with zero failed or unknown judgments. The final [seven-page PDF report](output/pdf/PA2_Final_Report.pdf) contains actual configurations, training curves, results, examples, and limitations.
+The Kaggle experiments and all 640 blinded Gemini 3.6 Flash comparisons are complete, with zero failed or unknown judgments. The final [seven-page PDF report](output/pdf/PA2_Final_Report.pdf) uses the official NeurIPS 2026 format with black text and monochrome plots, and contains actual configurations, results, examples, and limitations.
 
 | Comparison | Wins / ties / losses | Tie-adjusted preference |
 |---|---|---|
@@ -18,7 +18,7 @@ HH shows a small aggregate preference gain; UF favors SFT; the persona run shows
 
 Evidence is under [results/](results/), with exact saved Kaggle versions in [run_registry.json](results/run_registry.json). Large checkpoints remain in private Kaggle notebook outputs. The report and evidence are also saved in your [private Kaggle submission dataset](https://www.kaggle.com/datasets/jonraza15/pa2-completed-assignment).
 
-To rebuild the PDF locally:
+The editable LaTeX source is in [docs/report/](docs/report/). To rebuild the PDF locally, make sure Tectonic is available on PATH:
 
 ```bash
 python -m pip install -r requirements-report.txt

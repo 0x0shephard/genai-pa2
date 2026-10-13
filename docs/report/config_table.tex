@@ -1,0 +1,11 @@
+\small
+\begin{tabular}{llllrrr}
+\toprule
+Run & Strategy & LR; schedule & Batch $\times$ accum. & Updates & Best & $\beta$ \\
+\midrule
+SFT & Full & $2\times10^{-5}$; cosine & 2 $\times$ 16 & 842 & 842 & -- \\
+HH DPO & Full & $10^{-6}$; constant & 1 $\times$ 32 & 465 & 400 & 0.1 \\
+UF DPO & Full & $10^{-6}$; constant & 1 $\times$ 32 & 466 & 400 & 0.1 \\
+Persona LoRA-DPO & LoRA & $5\times10^{-5}$; cosine & 2 $\times$ 16 & 18 & 10 & 0.1 \\
+\bottomrule
+\end{tabular}

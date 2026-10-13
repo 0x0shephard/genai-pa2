@@ -25,8 +25,10 @@
   },
   "pdf": {
     "pages": 7,
-    "sha256": "b0b4247041eb8d160746461167ec55fb297f213d343903a9701b9ff1616395d4",
-    "visually_verified_pages": 7
+    "sha256": "bcf359337cc46e45c0f2f71a6328562970171db907385b518872ed5117948064",
+    "visually_verified_pages": 7,
+    "format": "Official NeurIPS 2026 preprint template",
+    "black_text_and_monochrome_figures": true
   },
   "judged_pairs": 640,
   "judge_failures": 0,
